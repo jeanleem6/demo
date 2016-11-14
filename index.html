@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>demo</title>
+    <style>
+        .outer-box {
+            position: relative;
+            margin-bottom: 1px;
+            padding:20px;
+            background-color: lightgrey;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            margin:50px;
+            padding:20px;
+            border:10px solid grey;
+            background-color: lightblue;
+            line-height: 24px;
+            color:#222;
+            text-align: center;
+            overflow:auto;
+        }
+        .placeholder {
+            height: 600px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+<div class="outer-box">section 1</div>
+<div class="outer-box">
+    <div class="box" id="box">box<br>box<br>box<br>box<br>box<br>box</div>
+</div>
+<section class="placeholder"></section>
+<script>
+function domSize(domHeight,domTop) {
+    this.domHeight = domHeight;
+    this.domTop = domTop;
+}
+
+var group = {},
+    box = document.getElementById('box');
+
+group.client = new domSize(box.clientHeight, box.clientTop);
+group.offset = new domSize(box.offsetHeight, box.offsetTop);
+group.scroll = new domSize(box.scrollHeight, box.scrollTop);
+
+console.table(group, ['domHeight', 'domTop']);
+</script>
+</body>
+</html>
