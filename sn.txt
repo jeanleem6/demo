@@ -1,6 +1,0 @@
-This is branch jean.
-A file sn.txt is added on this branch.
-Revamp sn.txt by jean.
-
-2016.11.16
-Jean
